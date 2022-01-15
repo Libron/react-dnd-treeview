@@ -50,7 +50,7 @@ export const Container = <T extends unknown>(props: Props): ReactElement => {
   const Component = treeContext.listComponent;
 
   return (
-    <Component ref={ref} role="list" {...rootProps} className={className}>
+    <Component ref={ref} role="list" data-children={view.length} {...rootProps} className={className}>
       {view.map((node, index) => (
         <React.Fragment key={node.id}>
           <Placeholder
