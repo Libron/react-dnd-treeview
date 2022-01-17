@@ -22,6 +22,7 @@ export type RenderParams = {
   draggable: boolean;
   hasChild: boolean;
   containerRef: RefObject<HTMLElement>;
+  parentRef: RefObject<HTMLElement>;
   onToggle(): void;
 };
 

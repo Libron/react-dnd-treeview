@@ -3,6 +3,7 @@ import React, {
   useRef,
   useCallback,
   useContext,
+  RefObject,
   PropsWithChildren,
   ReactElement,
 } from "react";
@@ -21,6 +22,7 @@ import { isDroppable } from "./utils";
 type Props = PropsWithChildren<{
   id: NodeModel["id"];
   depth: number;
+  parentRef: RefObject<HTMLElement>;
 }>;
 
 export const Node = <T extends unknown>(props: Props): ReactElement | null => {
@@ -80,6 +82,7 @@ export const Node = <T extends unknown>(props: Props): ReactElement | null => {
     isDropTarget,
     draggable,
     hasChild,
+    parentRef: props.parentRef,
     containerRef: ref,
     onToggle: handleToggle,
   };

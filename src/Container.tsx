@@ -59,7 +59,7 @@ export const Container = <T extends unknown>(props: Props): ReactElement => {
             dropTargetId={props.parentId}
             index={index}
           />
-          <Node id={node.id} depth={props.depth} />
+          <Node id={node.id} depth={props.depth} parentRef={ref} />
         </React.Fragment>
       ))}
       <Placeholder
